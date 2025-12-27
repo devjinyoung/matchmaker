@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
+import Layout from './components/Layout';
 import MemberHome from './pages/MemberHome';
+import Profile from './pages/Profile';
+import Search from './pages/Search';
+import Messages from './pages/Messages';
 
 function UsernameForm() {
   const [username, setUsername] = useState('');
@@ -38,7 +42,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<UsernameForm />} />
-      <Route path="/home" element={<MemberHome />} />
+      <Route element={<Layout />}>
+        <Route path="/home" element={<MemberHome />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/messages" element={<Messages />} />
+      </Route>
     </Routes>
   );
 }

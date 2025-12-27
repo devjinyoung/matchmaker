@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { ProfileData } from '../types';
 
 interface ProfileCardProps {
@@ -6,7 +7,10 @@ interface ProfileCardProps {
 
 function ProfileCard({ profile }: ProfileCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+    <Link
+      to="/profile"
+      className="block bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow cursor-pointer"
+    >
       {/* Profile Image */}
       <div className="flex justify-center mb-4">
         <div className="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -24,7 +28,7 @@ function ProfileCard({ profile }: ProfileCardProps) {
         <p className="text-gray-600">Age: {profile.age}</p>
         <p className="text-gray-600">{profile.location}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
