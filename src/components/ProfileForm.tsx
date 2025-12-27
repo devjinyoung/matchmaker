@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { ProfileData } from '../types';
 
-function EditProfileForm({
+function ProfileForm({
   profileData,
   onSave,
   onCancel,
@@ -147,4 +147,4 @@ function EditProfileForm({
   );
 }
 
-export default EditProfileForm;
+export default ProfileForm;

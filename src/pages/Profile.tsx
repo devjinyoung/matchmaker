@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import EditProfileForm from '../components/EditProfileForm';
+import ProfileForm from '../components/ProfileForm';
 import type { ProfileData } from '../types';
 
 function Profile() {
@@ -36,7 +36,7 @@ function Profile() {
       </div>
       <div className="bg-white rounded-lg shadow-lg p-6">
         {isEditing ? (
-          <EditProfileForm
+          <ProfileForm
             profileData={profileData}
             onSave={handleSave}
             onCancel={handleCancel}
